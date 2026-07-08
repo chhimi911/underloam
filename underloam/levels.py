@@ -1,0 +1,40 @@
+"""Text-grid rooms. Each character maps to a gameplay tile."""
+
+ROOMS = [
+    [
+        "XXXXXXXXXXXXXXXXXXXX",
+        "X..................X",
+        "X.....G.......XXX..X",
+        "X.P...G.......X.E..X",
+        "XXXX..G..XXX..X.XXXX",
+        "X.....G....C..X....X",
+        "X..XXXXXXX.C..XXXX.X",
+        "X..S.......C.......X",
+        "X..S..HHH..X..HHH..X",
+        "XXXXXXXXXXXXXXXXXXXX",
+    ],
+    [
+        "XXXXXXXXXXXXXXXXXXXX",
+        "X.P........G.......X",
+        "XXXXXXCXXXXGXXXX...X",
+        "X.....C....G...X.E.X",
+        "X..H..C........X.XXX",
+        "X..XXXXXXXXSSSSX...X",
+        "X..........S...XXX.X",
+        "X...HHHH...S.......X",
+        "X..XXXXXX..S..HH...X",
+        "XXXXXXXXXXXXXXXXXXXX",
+    ],
+    [
+        "XXXXXXXXXXXXXXXXXXXX",
+        "X.P..............E.X",
+        "XXXX..G..XXXXXXXXX.X",
+        "X.....G........X...X",
+        "X..C..G..HHHH..X.C.X",
+        "X..C..XXXXXXXX.X.C.X",
+        "X..C...........X...X",
+        "X..XXXX..SSSS..XXX.X",
+        "X.....H..S..H......X",
+        "XXXXXXXXXXXXXXXXXXXX",
+    ],
+]
