@@ -2,21 +2,21 @@
 
 Run this file directly to start the Pygame prototype. Vercel imports top-level
 ``main.py`` files looking for an ``app`` object, so this module also provides a
-tiny WSGI app that points users to the static project page.
+tiny WSGI app that serves the static project page.
 """
+
+from pathlib import Path
 
 
 def app(environ, start_response):
-    """Minimal WSGI app so Vercel does not mistake the game for a broken API."""
+    """Minimal WSGI app so Vercel shows the project page at the root URL."""
 
-    body = (
-        "Underloam is a local Python/Pygame desktop game. "
-        "Open the Vercel static page or run `python main.py` locally."
-    ).encode("utf-8")
+    index_path = Path(__file__).with_name("public") / "index.html"
+    body = index_path.read_bytes()
     start_response(
         "200 OK",
         [
-            ("Content-Type", "text/plain; charset=utf-8"),
+            ("Content-Type", "text/html; charset=utf-8"),
             ("Content-Length", str(len(body))),
         ],
     )
