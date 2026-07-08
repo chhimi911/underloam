@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Underloam</title>
+    <style>
+      :root {
+        --loam: #21170F;
+        --stone: #6D6F70;
+        --cracked: #B98B5F;
+        --soft: #4B2D1E;
+        --pore: #C8C8C0;
+        --hazard: #2FA84F;
+        --exit: #F6D84A;
+        --springtail: #33D7E8;
+        --beetle: #7A4B28;
+        --earthworm: #F28BB3;
+        --hud: #F2E8D5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--loam);
+        color: var(--hud);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(960px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 64px 0;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 56px;
+        line-height: 1;
+      }
+
+      h2 {
+        margin: 32px 0 8px;
+        font-size: 24px;
+      }
+
+      p {
+        max-width: 720px;
+        margin: 0 0 16px;
+      }
+
+      code,
+      pre {
+        font: 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+        margin: 16px 0 0;
+        padding: 16px;
+        background: var(--soft);
+        border: 1px solid var(--stone);
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(10, 32px);
+        gap: 4px;
+        margin: 32px 0;
+      }
+
+      .tile {
+        width: 32px;
+        height: 32px;
+        background: var(--soft);
+        border: 1px solid var(--stone);
+      }
+
+      .solid { background: var(--stone); }
+      .cracked { background: var(--cracked); }
+      .pore { background: var(--pore); }
+      .hazard { background: var(--hazard); }
+      .exit { background: var(--exit); }
+      .springtail { background: var(--springtail); }
+      .beetle { background: var(--beetle); }
+      .earthworm { background: var(--earthworm); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Underloam</h1>
+      <p>
+        Underloam is a local Python/Pygame desktop prototype. Vercel can host this
+        project page, but the playable game opens a native Pygame window on your Mac.
+      </p>
+
+      <div class="board" aria-label="Underloam tile palette preview">
+        <span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span>
+        <span class="tile solid"></span><span class="tile"></span><span class="tile springtail"></span><span class="tile"></span><span class="tile pore"></span><span class="tile"></span><span class="tile cracked"></span><span class="tile"></span><span class="tile exit"></span><span class="tile solid"></span>
+        <span class="tile solid"></span><span class="tile"></span><span class="tile beetle"></span><span class="tile"></span><span class="tile pore"></span><span class="tile hazard"></span><span class="tile cracked"></span><span class="tile"></span><span class="tile"></span><span class="tile solid"></span>
+        <span class="tile solid"></span><span class="tile"></span><span class="tile earthworm"></span><span class="tile"></span><span class="tile"></span><span class="tile soft"></span><span class="tile soft"></span><span class="tile hazard"></span><span class="tile"></span><span class="tile solid"></span>
+        <span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span><span class="tile solid"></span>
+      </div>
+
+      <h2>Run locally</h2>
+      <pre><code>python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python main.py</code></pre>
+
+      <h2>Controls</h2>
+      <p>
+        Move with arrows or A/D. Dash as Springtail with Left Shift or J. Jump as
+        Dung Beetle with Space. Tunnel as Earthworm with Down plus left or right.
+      </p>
+    </main>
+  </body>
+</html>

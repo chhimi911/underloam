@@ -52,3 +52,13 @@ python -m py_compile main.py underloam/*.py
 ```
 
 Interactive rendering is intentionally not fully automated. Use `python main.py` for the manual smoke test.
+
+## Vercel
+
+Underloam is a desktop Pygame app, so Vercel cannot run the playable game window.
+This repository includes a static `public/index.html` page for Vercel only.
+
+When importing the repo into Vercel, use the static setup from `vercel.json`.
+If the import screen selects the Python preset, change it to a non-framework/static
+project. The Python preset tries to execute `main.py` as a web function, which is
+not how this Pygame prototype runs.
