@@ -1,3 +1,10 @@
+[project]
+name = "underloam"
+version = "0.1.0"
+description = "Local Python/Pygame prototype with a Vercel-compatible informational endpoint."
+requires-python = ">=3.9"
+dependencies = []
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
